@@ -48,8 +48,7 @@ Kurulum tamamlandıktan sonra:
 Daha fazla bilgi ve `create-next-app` komunutu nasıl kullanılacağıyla ilgili dökümana [buradan](https://nextjs.org/docs/api-reference/create-next-app) ulaşabilirsiniz.
 
 
-
-### Manuel Kurulum
+### Manuel Kurulum
 
 `next`, `react` ve `react-dom` paketlerini projenize kurun: 
 
