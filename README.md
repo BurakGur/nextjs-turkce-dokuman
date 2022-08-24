@@ -90,5 +90,34 @@ Ana klasörde `pages` ve `public` adında iki tane klasör oluşturun:
   <img src="/logo.png" />
   ```
 
+Next.js sayfa konsepti üzerine inşa edilmiştir. Bir sayfa, `pages` klasörü içerisinde `.js`, `.jsx`, `.ts`, or `.tsx`
+uzantılı bir dosyanın React Component olarak dışarı aktarılmış halidir. Ayrıca dosya isimlendirmesiyle dinamik route da oluşturabilirsiniz.
+
+Projeye başlamak için `pages` klasörü içerisine `index.js` isimli bir sayfa oluşturun. Bu sayfa kullanıcılar sitenizi ziyaret ettiğinde gördükleri ana sayfanızdır. 
+
+`pages/index.js` sayfasını aşağıdaki gibi bir tanımlama yapabilirsiniz: 
+
+```jsx
+function HomePage() {
+  return <div>Welcome to Next.js!</div>
+}
+
+export default HomePage
+```
+
+Kurulum bittikten sonra:
+
+- `npm run dev` veya `yarn dev` veya `pnpm dev` komutları ile development ortamı localinizde `http://localhost:3000` şeklinde ayağa kaldırabilirsiniz
+- `http://localhost:3000` adresini ziyaret ederek uygulamanızı görebilirsiniz
+- `pages/index.js` dosyasını düzenleyip sonucu tarayıcınızda görebilirsiniz
+
+Next.js ile birlikte:
+
+- Otomatik derleme ve paketleme
+- React Fash Refresh (Hızlı Yenileme)
+- Statik dışa aktarım ve `pages` ile server tarafında render
+- Statik dosya aktarımı ile `public/` içerisindeki assetleri ana url'de kullanma
+
+Ayrıca herhangi bir Next.js uygulaması productiona baştan itibaren hazırdır. Bununla ilgili daha fazla bilgi için [Yayına Alma](https://nextjs.org/docs/deployment) dökümanını okuyabilirsiniz.
 
 
