@@ -1,6 +1,8 @@
 # **Next JS Türkçe Döküman**
 
 1. [**Başlarken**](#başlarken)
+2. [**Basit Özellikler**](#basit-özellikler)
+   1. [Sayfalar](#sayfalar)
 
 ## Başlarken 
 
@@ -120,4 +122,24 @@ Next.js ile birlikte:
 
 Ayrıca herhangi bir Next.js uygulaması productiona baştan itibaren hazırdır. Bununla ilgili daha fazla bilgi için [Yayına Alma](https://nextjs.org/docs/deployment) dökümanını okuyabilirsiniz.
 
+## Basit Özellikler
 
+### Sayfalar
+
+Next.js sayfa konsepti üzerine inşa edilmiştir. Bir sayfa, `pages` klasörü içerisinde `.js`, `.jsx`, `.ts`, or `.tsx` uzantılı bir dosyanın React Component olarak dışarı aktarılmış halidir. İçerisindeki dosya ismine göre route oluşturur.
+
+***Örnek:***  `pages/hakkimizda.js` dosyası `http://localhost:3000/hakkimizda` yolunu oluşturur.
+
+```jsx
+function About() {
+  return <div>About</div>
+}
+
+export default About
+```
+
+##### Dinamik Sayfalar
+
+Next.js dinamik sayfaları destekler. Örnek olarak, eğer `pages/yazilar/[id].js` isimli bir dosya oluşturursanız, `http://localhost:3000/yazilar/1`, `http://localhost:3000/yazilar/2` gibi uzantılara erişebilirsiniz.
+
+Daha fazla bilgi için [Dinamik Sayfalar dökümanını](#dinamik-sayfalar) ziyaret edebilirsiniz.
