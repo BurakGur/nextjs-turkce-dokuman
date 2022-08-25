@@ -1,8 +1,13 @@
-# **Next JS Türkçe Döküman**
+# Next.js Türkçe Döküman
 
+Merhaba, ben Burak. Next.js dökümanını Türkçe'ye çeviriyorum. Buradaki amacım bire bir çeviriden ziyade kendi notlarımla birlikte anlaşılır bir Türkçe Next.js dökümanı oluşturmak. Lütfen eklemek veya düzenlemek istediğiniz kısımları pull request açın.
+
+İyi okumalar. 
+
+### Döküman
 1. [**Başlarken**](#başlarken)
 2. [**Basit Özellikler**](#basit-özellikler)
-   1. [Sayfalar](#sayfalar)
+   1. [**Sayfalar**](#sayfalar)
 
 ## Başlarken 
 
@@ -149,3 +154,19 @@ Daha fazla bilgi için [Dinamik Sayfalar dökümanını](#dinamik-sayfalar) ziya
 Varsayılan olarak Next.js tüm sayfaları **pre-render** işlemini uygular. Yani Next.js her sayfayı client tarafındaki JavaScript ile değil,  kendi oluşturduğu HTML ile yapar. Örnek olarak React her sayfayı client tarafındaki JavaScript ile üretir, Next.js ise bildiğimiz HTML ile yapar. Bu da hem daha iyi performans hem de daha iyi SEO puanı demektir.
 
 Next.js 'in oluşturduğu her HTML o sayfa için gerekli minimum JavaScript koduyla birleştirilir. Sayfa tarayıcı tarafından yüklendiğinde, bu JavaScript kodu çalışır ve sayfayı komple interaktif hale getirir. (Bu işleme *hidrasyon* denir.)
+
+#### Pre-rendering'in İki Türü
+
+Next.js'in iki tür pre-rendering çeşidi vardır. Bunlar **Static Generation** (Statik Üretim) ve **Server-side Rendering** (Sunucu taraflı render) olarak tanımlanır ve farkları HTML sayfalarını **ne zaman** ürettikleridir.
+
+- **Statik Generation (Önerilen):** HTML build sırasında oluşturulur ve her istekte kullanılır.
+- **Server-side Rendering**: HTML her istekte oluşturulur.
+
+Buradaki temel fark Static Generation bize HTML kodu oluşmuş bir yapı sunarken Server-side Rendering istek anında oluşturur.
+
+
+Önemli olan noktalardan bir tanesi, Next.js her sayfa için pre-rendering yöntemini **seçmenize** izin verir. Burada "hibrit" bir yapı da kullanabilirsiniz. Next.js uygulamanızın çoğu sayfasında Static Generation kullanırken, bazı sayfalar da Server-side Rendering kullanabilirsiniz.
+
+Biz performans sebebiyle Server-side Rendering yerine **Static Generation** kullanmanızı **öneriyoruz**. Statik oluşturulmuş sayfalar herhangi bir ekstra ayar yapmadan CDN ile cachelenebilir ve performans olarak çok üst seviyelere çıkabilir. Ancak bazı durumlarda Server-side Rendering tek seçenek olabilir.
+
+Ayrıca Statik Generation ve Server-side Rendering ile birlikte **client tarafında data fetch** işlemleri yapabilirsiniz. Bu bazı sayfaların client tarafında JavaScript ile render edileceğini anlamına gelir. Daha fazla bilgi için [Data Fetching](#client-tarafında-data-fetch) dökümanına göz atabilirsiniz.
