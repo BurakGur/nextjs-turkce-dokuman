@@ -138,8 +138,14 @@ function About() {
 export default About
 ```
 
-##### Dinamik Sayfalar
+#### Dinamik Sayfalar
 
 Next.js dinamik sayfaları destekler. Örnek olarak, eğer `pages/yazilar/[id].js` isimli bir dosya oluşturursanız, `http://localhost:3000/yazilar/1`, `http://localhost:3000/yazilar/2` gibi uzantılara erişebilirsiniz.
 
 Daha fazla bilgi için [Dinamik Sayfalar dökümanını](#dinamik-sayfalar) ziyaret edebilirsiniz.
+
+### Pre-rendering
+
+Varsayılan olarak Next.js tüm sayfaları **pre-render** işlemini uygular. Yani Next.js her sayfayı client tarafındaki JavaScript ile değil,  kendi oluşturduğu HTML ile yapar. Örnek olarak React her sayfayı client tarafındaki JavaScript ile üretir, Next.js ise bildiğimiz HTML ile yapar. Bu da hem daha iyi performans hem de daha iyi SEO puanı demektir.
+
+Next.js 'in oluşturduğu her HTML o sayfa için gerekli minimum JavaScript koduyla birleştirilir. Sayfa tarayıcı tarafından yüklendiğinde, bu JavaScript kodu çalışır ve sayfayı komple interaktif hale getirir. (Bu işleme *hidrasyon* denir.)
