@@ -170,3 +170,69 @@ Buradaki temel fark Static Generation bize HTML kodu oluşmuş bir yapı sunarke
 Biz performans sebebiyle Server-side Rendering yerine **Static Generation** kullanmanızı **öneriyoruz**. Statik oluşturulmuş sayfalar herhangi bir ekstra ayar yapmadan CDN ile cachelenebilir ve performans olarak çok üst seviyelere çıkabilir. Ancak bazı durumlarda Server-side Rendering tek seçenek olabilir.
 
 Ayrıca Statik Generation ve Server-side Rendering ile birlikte **client tarafında data fetch** işlemleri yapabilirsiniz. Bu bazı sayfaların client tarafında JavaScript ile render edileceğini anlamına gelir. Daha fazla bilgi için [Data Fetching](#client-tarafında-data-fetch) dökümanına göz atabilirsiniz.
+
+### Static Generation (Önerilen)
+
+<details>
+  <summary>Örnekler</summary>
+  <ul>
+  <li>
+    <a href="https://github.com/vercel/next.js/tree/canary/examples/cms-wordpress" class="absolute" target="_blank" rel="noopener noreferrer">WordPress Örneği</a> ( <a href="https://next-blog-wordpress.vercel.app" class="absolute" target="_blank" rel="noopener noreferrer">Demo</a>)
+  </li>
+  <li>
+    <a href="https://github.com/vercel/next.js/tree/canary/examples/blog-starter" class="absolute" target="_blank" rel="noopener noreferrer">Markdown Dosyalarıyla Blog Başlangıcı</a> ( <a href="https://next-blog-starter.vercel.app/" class="absolute" target="_blank" rel="noopener noreferrer">Demo</a>)
+  </li>
+  <li>
+    <a href="https://github.com/vercel/next.js/tree/canary/examples/cms-datocms" class="absolute" target="_blank" rel="noopener noreferrer">DatoCMS Örneği</a> ( <a href="https://next-blog-datocms.vercel.app/" class="absolute" target="_blank" rel="noopener noreferrer">Demo</a>)
+  </li>
+  <li>
+    <a href="https://github.com/vercel/next.js/tree/canary/examples/cms-takeshape" class="absolute" target="_blank" rel="noopener noreferrer">TakeShape Örneği</a> ( <a href="https://next-blog-takeshape.vercel.app/" class="absolute" target="_blank" rel="noopener noreferrer">Demo</a>)
+  </li>
+  <li>
+    <a href="https://github.com/vercel/next.js/tree/canary/examples/cms-sanity" class="absolute" target="_blank" rel="noopener noreferrer">Sanity Örneği</a> ( <a href="https://next-blog-sanity.vercel.app/" class="absolute" target="_blank" rel="noopener noreferrer">Demo</a>)
+  </li>
+  <li>
+    <a href="https://github.com/vercel/next.js/tree/canary/examples/cms-prismic" class="absolute" target="_blank" rel="noopener noreferrer">Prismic Örneği</a> ( <a href="https://next-blog-prismic.vercel.app/" class="absolute" target="_blank" rel="noopener noreferrer">Demo</a>)
+  </li>
+  <li>
+    <a href="https://github.com/vercel/next.js/tree/canary/examples/cms-contentful" class="absolute" target="_blank" rel="noopener noreferrer">Contentful Örneği</a> ( <a href="https://next-blog-contentful.vercel.app/" class="absolute" target="_blank" rel="noopener noreferrer">Demo</a>)
+  </li>
+  <li>
+    <a href="https://github.com/vercel/next.js/tree/canary/examples/cms-strapi" class="absolute" target="_blank" rel="noopener noreferrer">Strapi Örneği</a> ( <a href="https://next-blog-strapi.vercel.app/" class="absolute" target="_blank" rel="noopener noreferrer">Demo</a>)
+  </li>
+  <li>
+    <a href="https://github.com/vercel/next.js/tree/canary/examples/cms-prepr" class="absolute" target="_blank" rel="noopener noreferrer">Prepr Örneği</a> ( <a href="https://next-blog-prepr.vercel.app/" class="absolute" target="_blank" rel="noopener noreferrer">Demo</a>)
+  </li>
+  <li>
+    <a href="https://github.com/vercel/next.js/tree/canary/examples/cms-agilitycms" class="absolute" target="_blank" rel="noopener noreferrer">Agility CMS Örneği</a> ( <a href="https://next-blog-agilitycms.vercel.app/" class="absolute" target="_blank" rel="noopener noreferrer">Demo</a>)
+  </li>
+  <li>
+    <a href="https://github.com/vercel/next.js/tree/canary/examples/cms-cosmic" class="absolute" target="_blank" rel="noopener noreferrer">Cosmic Örneği</a> ( <a href="https://next-blog-cosmic.vercel.app/" class="absolute" target="_blank" rel="noopener noreferrer">Demo</a>)
+  </li>
+  <li>
+    <a href="https://github.com/vercel/next.js/tree/canary/examples/cms-buttercms" class="absolute" target="_blank" rel="noopener noreferrer">ButterCMS Örneği</a> ( <a href="https://next-blog-buttercms.vercel.app/" class="absolute" target="_blank" rel="noopener noreferrer">Demo</a>)
+  </li>
+  <li>
+    <a href="https://github.com/vercel/next.js/tree/canary/examples/cms-storyblok" class="absolute" target="_blank" rel="noopener noreferrer">Storyblok Örneği</a> ( <a href="https://next-blog-storyblok.vercel.app/" class="absolute" target="_blank" rel="noopener noreferrer">Demo</a>)
+  </li>
+  <li>
+    <a href="https://github.com/vercel/next.js/tree/canary/examples/cms-graphcms" class="absolute" target="_blank" rel="noopener noreferrer">GraphCMS Örneği</a> ( <a href="https://next-blog-graphcms.vercel.app/" class="absolute" target="_blank" rel="noopener noreferrer">Demo</a>)
+  </li>
+  <li>
+    <a href="https://github.com/vercel/next.js/tree/canary/examples/cms-kontent" class="absolute" target="_blank" rel="noopener noreferrer">Kontent Örneği</a> ( <a href="https://next-blog-kontent.vercel.app/" class="absolute" target="_blank" rel="noopener noreferrer">Demo</a>)
+  </li>
+  <li>
+    <a href="https://github.com/vercel/next.js/tree/canary/examples/cms-builder-io" class="absolute" target="_blank" rel="noopener noreferrer">Builder.io Örneği</a> ( <a href="https://cms-builder-io.vercel.app/" class="absolute" target="_blank" rel="noopener noreferrer">Demo</a>)
+  </li>
+  <li>
+    <a href="https://github.com/vercel/next.js/tree/canary/examples/cms-tina" class="absolute" target="_blank" rel="noopener noreferrer">TinaCMS Örneği</a> ( <a href="https://cms-tina-example.vercel.app/" class="absolute" target="_blank" rel="noopener noreferrer">Demo</a>)
+  </li>
+  <li>
+    <a href="https://static-tweet.vercel.app/" class="absolute" target="_blank" rel="noopener noreferrer">Static Tweet (Demo)</a>
+  </li>
+</ul>
+</details>
+
+Eğer **Statik Generation** kullanıyorsanız HTML **build yaptığınız zaman** oluşturulur. Yani production ortamında `next build` komutunu çalıştırdığınızda sayfanın HTML halini oluşturmuş olursunuz. Bu oluşturulan HTML her istekte yeniden kullanılır ve CDN ile cachelenir.
+
+Next.js'de datanız olsun veya olmasın sayfaları statik olarak oluşturabilirsiniz.  Şimdi her iki duruma da bakalım.
