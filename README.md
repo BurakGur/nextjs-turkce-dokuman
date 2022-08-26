@@ -235,4 +235,63 @@ Ayrıca Statik Generation ve Server-side Rendering ile birlikte **client tarafı
 
 Eğer **Statik Generation** kullanıyorsanız HTML **build yaptığınız zaman** oluşturulur. Yani production ortamında `next build` komutunu çalıştırdığınızda sayfanın HTML halini oluşturmuş olursunuz. Bu oluşturulan HTML her istekte yeniden kullanılır ve CDN ile cachelenir.
 
-Next.js'de datanız olsun veya olmasın sayfaları statik olarak oluşturabilirsiniz.  Şimdi her iki duruma da bakalım.
+Next.js'de datanız olsun veya olmasın sayfaları statik olarak oluşturabilirsiniz. Şimdi her iki duruma da bakalım.
+
+#### Data ile Static Generation
+
+Pre-rendering için bazı sayfaların data fetch işlemi yapması gerekir. Burada iki senaryo vardır ve bu iki senaryonun birisi ve ikisi birden de aynı anda olabilir. Her durumda, Next.js'in sağladığı şu fonksiyonları kullanabilirsiniz: 
+
+1. Sayfanız gelen datadan **içeriğe** bağlı olabilir: Bu durumda `getStaticProps` kullanınız.
+2. Sayfanız gelen dataya göre **url uzantısı** oluşturabilir. Bu durumda `getStaticPaths` kullanınız. (genellikle `getStaticProps` ile birlikte kullanılır. )
+
+
+
+#### Senaryo 1: Sayfanız gelen datadaki içeriğe bağlı
+
+**Örnek:** Blog sayfanız bir CMS (*Content Management System - İçerik Yönetim Sistemi*) üzerinden blog yazılarını listlemek için fetch işlemine ihtiyaç duyabilir.
+
+```jsx 
+// TODO: Bu sayfanın pre-render yapabilmesi için `posts` datasının
+//       bir API'den gelmesi gerekiyor.
+
+function Blog({ posts }) {
+  return (
+    <ul>
+      {posts.map((post) => (
+        <li>{post.title}</li>
+      ))}
+    </ul>
+  )
+}
+
+export default Blog
+```
+
+Next.js pre-render için gerekli olan datayı fetch edebilmek için aynı dosyada `getStaticProps` isimli bir  edilebilir `async` fonksiyonda fetch işlemini yapmaya izin verir. Bu fonksiyon build zamanında çağrılır ve fetch işleminden gelen datayı `props` olarak sayfaya basar.
+
+```jsx
+function Blog({ posts }) {
+  // Render posts...
+}
+
+// Bu fonksiyon build zamanında çağrılır
+export async function getStaticProps() {
+  // Bir API'den fetch işlemi yapılır
+  const res = await fetch('https://.../posts')
+  const posts = await res.json()
+
+  // return { props: { posts } } ile, yukarıdaki Blog componentine
+  // build zamanında posts içeriğide prop olarak gönderilir.
+  return {
+    props: {
+      posts,
+    },
+  }
+}
+
+export default Blog
+```
+
+`getStaticProps`'un nasıl çalıştığıyla ilgili daha fazla bilgi için [Data Fetching](https://github.com/BurakGur/nextjs-turkce-dokuman#client-tarafında-data-fetch) dökümanına göz atabilirsiniz.
+
+
