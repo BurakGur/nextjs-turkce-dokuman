@@ -294,4 +294,14 @@ export default Blog
 
 `getStaticProps`'un nasıl çalıştığıyla ilgili daha fazla bilgi için [Data Fetching](https://github.com/BurakGur/nextjs-turkce-dokuman#client-tarafında-data-fetch) dökümanına göz atabilirsiniz.
 
+##### Senaryo 2: Sayfanızın rotası gelen içeriğe bağlı
+
+Next.js dinamik rotalar oluşturmanıza izin verir. Örneğin, pages/posts/[id].js isimli bir dosya oluşturduğumuzda id'ye bağlı bir rota oluşturabilirsiniz. Bu şekilde eğer id'iniz 1 ise `posts/1` rotasında sayfanıza ulaşabilirsiniz.
+
+Ancak, bu `id` 'yi build esnasında harici bir dataya bağlı olarak pre-render yapmasını isteyebilirsiniz. Yani `id` 'yi bir fetch işleminden gelen dataya göre belirlemek isteyebilirsiniz.
+
+**Örnek:** databese'inize yalnızca bir adet blog postu (`id: 1` değeriyle) eklediğinizi varsayalım. Bu senaryoda yalnızca `posts/1` şeklinde bir pre-render işlemi olacaktır.
+
+Daha sonra `id:2` şeklideki ikinci postunuzu eklediğinizde `posts/2` şeklinde sonuç alacaksınız.
+
 
